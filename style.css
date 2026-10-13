@@ -1,0 +1,149 @@
+/* ===== Design tokens (CSS custom properties) ===== */
+:root {
+  --red: #c8321e;
+  --red-dark: #9c2515;
+  --cream: #fff6e8;
+  --dark: #2b2118;
+  --green: #3f7d3a;
+  --white: #ffffff;
+  --radius: 10px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Reset / base (mobile-first) ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background: var(--cream);
+  color: var(--dark);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--red-dark); }
+
+h1, h2, h3 { line-height: 1.2; margin-bottom: 0.5rem; }
+
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 1rem; }
+
+/* ===== Header and navigation ===== */
+.site-header { background: var(--red); color: var(--white); position: sticky; top: 0; z-index: 10; }
+
+.header-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1100px; margin: 0 auto; padding: 0.75rem 1rem;
+}
+
+.logo { font-size: 1.4rem; font-weight: bold; color: var(--white); text-decoration: none; }
+
+.nav-toggle {
+  background: none; border: 2px solid var(--white); color: var(--white);
+  font-size: 1.3rem; padding: 0.2rem 0.6rem; border-radius: 6px; cursor: pointer;
+}
+
+.main-nav { display: none; width: 100%; }
+.main-nav.open { display: block; }
+.main-nav ul { list-style: none; }
+.main-nav a {
+  display: block; padding: 0.75rem 1rem; color: var(--white);
+  text-decoration: none; border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.main-nav a:hover, .main-nav a:focus, .main-nav a.active { background: var(--red-dark); }
+
+/* On mobile the nav drops below the logo row */
+.header-inner { flex-wrap: wrap; }
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(rgba(43, 33, 24, 0.65), rgba(43, 33, 24, 0.65)),
+              linear-gradient(135deg, #e8832a, #c8321e);
+  color: var(--white); text-align: center; padding: 3rem 1rem;
+}
+.hero h1 { font-size: 2rem; }
+.hero p { max-width: 600px; margin: 0.5rem auto 1.5rem; }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block; background: var(--red); color: var(--white);
+  border: none; padding: 0.7rem 1.4rem; border-radius: var(--radius);
+  font-size: 1rem; cursor: pointer; text-decoration: none;
+}
+.btn:hover, .btn:focus { background: var(--red-dark); }
+.btn-secondary { background: var(--green); }
+.btn-secondary:hover { background: #2f6030; }
+.btn:disabled { background: #999; cursor: not-allowed; }
+:focus-visible { outline: 3px solid #1a73e8; outline-offset: 2px; }
+
+/* ===== Feature cards (welcome page) ===== */
+.features { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
+.card {
+  background: var(--white); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 1.25rem;
+}
+
+/* ===== Order page ===== */
+.order-layout { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.filter-btn {
+  background: var(--white); border: 2px solid var(--red); color: var(--red);
+  padding: 0.4rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.95rem;
+}
+.filter-btn.active { background: var(--red); color: var(--white); }
+
+.menu-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.menu-item { display: flex; flex-direction: column; justify-content: space-between; }
+.menu-item .price { font-weight: bold; color: var(--green); margin: 0.5rem 0; }
+.menu-item label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; }
+
+.basket { align-self: start; }
+.basket ul { list-style: none; margin-bottom: 1rem; }
+.basket li {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid #eee;
+}
+.basket .qty-controls button {
+  width: 1.8rem; height: 1.8rem; border-radius: 50%; border: 1px solid var(--red);
+  background: var(--white); cursor: pointer; font-size: 1rem;
+}
+.total { font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem; }
+
+/* ===== Forms ===== */
+.form-group { margin-bottom: 1rem; }
+label { display: block; font-weight: bold; margin-bottom: 0.25rem; }
+input, select, textarea {
+  width: 100%; padding: 0.6rem; border: 2px solid #ccc;
+  border-radius: 6px; font: inherit; background: var(--white);
+}
+input:focus, select:focus, textarea:focus { border-color: var(--red); }
+textarea { min-height: 120px; resize: vertical; }
+.error { color: #b00020; font-size: 0.85rem; min-height: 1.2em; }
+input.invalid, textarea.invalid, select.invalid { border-color: #b00020; }
+
+.message {
+  padding: 0.75rem 1rem; border-radius: 6px; margin-top: 1rem;
+  background: #e3f4e1; border: 1px solid var(--green);
+}
+.hidden { display: none; }
+
+/* ===== Footer ===== */
+.site-footer { background: var(--dark); color: var(--white); text-align: center; padding: 1rem; margin-top: 2rem; }
+
+/* ===== Tablet and up ===== */
+@media (min-width: 700px) {
+  .features { grid-template-columns: repeat(3, 1fr); }
+  .menu-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: 2.8rem; }
+}
+
+/* ===== Desktop: nav becomes a horizontal bar, basket sits beside the menu ===== */
+@media (min-width: 900px) {
+  .nav-toggle { display: none; }
+  .main-nav { display: block; width: auto; }
+  .main-nav ul { display: flex; }
+  .main-nav a { border-top: none; border-radius: 6px; }
+  .order-layout { grid-template-columns: 2fr 1fr; }
+  .basket { position: sticky; top: 80px; }
+}

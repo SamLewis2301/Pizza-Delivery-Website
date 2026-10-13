@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Order pizza, sides and drinks from Slice Rocket.">
+  <title>Slice Rocket | Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="welcome.html" class="logo">🍕 Slice Rocket</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation menu">&#9776;</button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="welcome.html">Welcome</a></li>
+          <li><a href="order.html" class="active" aria-current="page">Order</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Order online</h1>
+
+    <div class="order-layout">
+      <section aria-labelledby="menu-title">
+        <h2 id="menu-title">Menu</h2>
+
+        <div class="filters" id="filters" role="group" aria-label="Filter menu by category">
+          <button type="button" class="filter-btn active" data-category="all">All</button>
+          <button type="button" class="filter-btn" data-category="classic">Classic</button>
+          <button type="button" class="filter-btn" data-category="meat">Meat</button>
+          <button type="button" class="filter-btn" data-category="veggie">Veggie</button>
+          <button type="button" class="filter-btn" data-category="sides">Sides &amp; drinks</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid"></div>
+      </section>
+
+      <aside class="card basket" aria-labelledby="basket-title">
+        <h2 id="basket-title">Your basket</h2>
+        <p id="emptyMessage">Your basket is empty. Add something tasty!</p>
+        <ul id="basketList"></ul>
+        <p class="total">Total: <span id="basketTotal">£0.00</span></p>
+
+        <form id="orderForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+            <p class="error" id="nameError"></p>
+          </div>
+          <div class="form-group">
+            <label for="address">Delivery address</label>
+            <input type="text" id="address" name="address" autocomplete="street-address" required>
+            <p class="error" id="addressError"></p>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+            <p class="error" id="phoneError"></p>
+          </div>
+          <button type="submit" class="btn" id="placeOrder" disabled>Place order</button>
+          <button type="button" class="btn btn-secondary" id="clearBasket">Clear basket</button>
+        </form>
+
+        <p class="message hidden" id="orderMessage" role="status"></p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Slice Rocket (a fictitious business for a university assessment)</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Slice Rocket with questions, feedback or catering enquiries.">
+  <title>Slice Rocket | Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="welcome.html" class="logo">🍕 Slice Rocket</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation menu">&#9776;</button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="welcome.html">Welcome</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Contact us</h1>
+
+    <div class="order-layout">
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Send us a message</h2>
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="cName">Name</label>
+            <input type="text" id="cName" name="name" autocomplete="name" required>
+            <p class="error" id="cNameError"></p>
+          </div>
+          <div class="form-group">
+            <label for="cEmail">Email</label>
+            <input type="email" id="cEmail" name="email" autocomplete="email" required>
+            <p class="error" id="cEmailError"></p>
+          </div>
+          <div class="form-group">
+            <label for="cTopic">Topic</label>
+            <select id="cTopic" name="topic" required>
+              <option value="">Please choose...</option>
+              <option value="order">Question about an order</option>
+              <option value="feedback">Feedback</option>
+              <option value="catering">Catering enquiry</option>
+              <option value="other">Something else</option>
+            </select>
+            <p class="error" id="cTopicError"></p>
+          </div>
+          <div class="form-group">
+            <label for="cMessage">Message</label>
+            <textarea id="cMessage" name="message" required></textarea>
+            <p class="error" id="cMessageError"></p>
+          </div>
+          <button type="submit" class="btn">Send message</button>
+        </form>
+        <p class="message hidden" id="contactMessage" role="status"></p>
+      </section>
+
+      <aside class="card" aria-labelledby="details-title">
+        <h2 id="details-title">Find us</h2>
+        <address>
+          Slice Rocket<br>
+          12 Oven Lane<br>
+          Cardiff, CF10 1AA
+        </address>
+        <p style="margin-top: 1rem;">Phone: <a href="tel:+442920000000">029 2000 0000</a></p>
+        <p>Email: <a href="mailto:hello@slicerocket.example">hello@slicerocket.example</a></p>
+        <p style="margin-top: 1rem;">Open daily. See our <a href="welcome.html">welcome page</a> for opening hours.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Slice Rocket (a fictitious business for a university assessment)</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
